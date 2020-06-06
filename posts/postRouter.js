@@ -1,6 +1,8 @@
 const express = require('express');
-
 const router = express.Router();
+
+const posts = require('./postDb');
+const {validateUserId, validateUser, validatePosts} = require('../middleware/middleware')
 
 router.get('/', (req, res) => {
   // do your magic!
@@ -18,10 +20,6 @@ router.put('/:id', (req, res) => {
   // do your magic!
 });
 
-// custom middleware
 
-function validatePostId(req, res, next) {
-  // do your magic!
-}
 
 module.exports = router;
